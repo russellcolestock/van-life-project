@@ -47,8 +47,10 @@ nav h1 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-image: url(images/mountain-lake.png);
-    background-size: cover; 
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.46)),
+    url(images/mountain-lake.png) no-repeat center center;
+    background-size: cover;
+    min-height: 350px;
     padding: 65px 27px;
 
 }
