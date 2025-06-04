@@ -1,0 +1,154 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", sans-serif;
+}
+
+nav > a {
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 36px 26px;
+    background-color: #FFF7ED;
+}
+
+.nav-links-container {
+    display: flex;
+    gap: 14px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #4D4D4D;
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 16px;
+    text-align: right;
+}
+
+nav h1 {
+    font-family: Inter;
+    font-weight: 900;
+    font-size: 25.35px;
+}
+
+/* Home page */
+
+.home-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url(images/mountain-lake.png);
+    background-size: cover; 
+    padding: 65px 27px;
+
+}
+
+.home-main-info {
+    max-width: 500px;
+
+}
+
+.home-main h1 {
+    font-weight: 800;
+    font-size: 36px;
+    line-height: 42px;
+    color: #ffffff;
+    padding-bottom: 23px;
+}
+
+.home-main p {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #ffffff;
+    padding-bottom: 52px;
+}
+
+.home-main button {
+    background-color: #FF8C38;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 31.66px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+}
+
+footer {
+    color: #AAAAAA;
+    background-color: #252525;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 22.92px;
+    text-align: center;
+    padding: 25px;
+}
+
+/* About page */
+
+.about-main {
+    background-color: #FFF7ED;
+    color: #161616;
+}
+
+.about-main img {
+    width: 100%;
+}
+
+.about-main-info {
+    padding: 48px 27px 53px;
+}
+
+.about-main-info h1 {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 38px;
+}
+
+.about-main-info p {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    margin: 0;
+    padding-bottom: 55px;
+}
+
+.about-main-info div {
+    background-color: #FFCC8D;
+    padding: 32px 37px;
+    border-radius: 5px;
+}
+
+.about-main-info div h2 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    margin: 0;
+    padding-bottom: 25px;
+
+}
+
+.about-main-info div button {
+    background-color: #161616;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 15.95px;
+    line-height: 23.92px;
+    vertical-align: middle;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 10px;
+}
