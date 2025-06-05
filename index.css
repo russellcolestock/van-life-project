@@ -34,10 +34,16 @@ nav {
     text-align: right;
 }
 
-nav h1 {
+.nav-link:hover, .site-logo:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.site-logo {
     font-family: Inter;
     font-weight: 900;
     font-size: 25.35px;
+    color: #000000;
 }
 
 /* Home page */
