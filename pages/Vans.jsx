@@ -24,7 +24,7 @@ export default function Vans() {
                 <h2>{van.name}</h2>
                 <p>${van.price}<span>/day</span></p>
             </div>
-            <button className={van.type}>{capitalize(van.type)}</button>
+            <i className={`van-type ${van.type} selected`}>{capitalize(van.type)}</i>
         </div>
     ))
 

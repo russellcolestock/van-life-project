@@ -197,15 +197,16 @@ footer {
     font-size: 0.875rem;
 }
 
-.van-tile button {
+.van-tile i {
     border: none;
     color: #FFEAD0;
+    font-style: normal;
     font-weight: 600;
     font-size: 16px;
     line-height: 31.66px;
     text-align: center; 
     vertical-align: middle;
-    padding-inline: 13px;
+    padding: 7px 13px;
     border-radius: 5px;
 }
 
