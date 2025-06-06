@@ -13,19 +13,33 @@ export default function Vans() {
             })
     }, [] )
 
+    function capitalize(word) {
+        return word.charAt(0).toUpperCase() + word.slice(1)
+    }
+
+    const vanElements = vanData.map(van => (
+        <div key={van.id} className="van-tile">
+            <img src={van.imageUrl} alt={`Image of ${van.name}`} />
+            <div className="van-info">
+                <h2>{van.name}</h2>
+                <p>${van.price}<span>/day</span></p>
+            </div>
+            <button className={van.type}>{capitalize(van.type)}</button>
+        </div>
+    ))
+
     return (
-        <div>
-            <h1>Vans page goes here 🚐</h1>
-            {vanData.map(van => (
-                <div key={van.id}>
-                    <img src={van.imageUrl} />
-                    <div>
-                        <h2>{van.name}</h2>
-                        <p>{van.price}</p>
-                    </div>
-                    <button>{van.type}</button>
-                </div>
-            ))}
+        <div className="vans-wrapper">
+            <h1>Explore our van options</h1>
+            <div className="filter-btns-container">
+                <button>Simple</button>
+                <button>Luxury</button>
+                <button>Rugged</button>
+                <button>Clear filters</button>
+            </div>
+            <div className="van-list">
+                {vanElements}
+            </div>
         </div>
     )
 }
