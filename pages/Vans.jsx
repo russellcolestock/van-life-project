@@ -18,14 +18,16 @@ export default function Vans() {
     }
 
     const vanElements = vanData.map(van => (
-        <div key={van.id} className="van-tile">
-            <img src={van.imageUrl} alt={`Image of ${van.name}`} />
-            <div className="van-info">
-                <h2>{van.name}</h2>
-                <p>${van.price}<span>/day</span></p>
+        <Link to={`/vans/${van.id}`}>
+            <div key={van.id} className="van-tile">
+                <img src={van.imageUrl} alt={`Image of ${van.name}`} />
+                <div className="van-info">
+                    <h2>{van.name}</h2>
+                    <p>${van.price}<span>/day</span></p>
+                </div>
+                <i className={`van-type ${van.type} selected`}>{capitalize(van.type)}</i>
             </div>
-            <i className={`van-type ${van.type} selected`}>{capitalize(van.type)}</i>
-        </div>
+        </Link>
     ))
 
     return (
