@@ -173,10 +173,6 @@ footer {
     margin: 0;
 }
 
-.van-tile h2 {
-    text-decoration: none;
-}
-
 .van-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
