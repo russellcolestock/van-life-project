@@ -13,17 +13,19 @@ export default function VanDetail() {
             .then(data => setVan(data.vans))
     }, [params.id])
     
-    console.log(van)
+    function capitalize(word = "") {
+        return word.charAt(0).toUpperCase() + word.slice(1)
+    }
 
     return (
         <div className="van-detail-container">
             {van ? (
                 <div className="van-detail">
                     <img src={van.imageUrl} alt={`Image of ${van.name}`} />
-                    <i className={`van-type ${van.type} selected`}>{van.type}</i>
+                    <i className={`van-type ${van.type} selected`}>{capitalize(van.type)}</i>
                     <h2>{van.name}</h2>
                     <p className="van-price"><span>${van.price}</span>/day</p>
-                    <p>{van.description}</p>
+                    <p className="van-description">{van.description}</p>
                     <button className="link-button">Rent this van</button>
                 </div>
             ) :<h2>Loading...</h2>}

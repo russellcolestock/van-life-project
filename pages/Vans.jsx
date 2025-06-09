@@ -20,6 +20,7 @@ export default function Vans() {
     const vanElements = vanData.map(van => (
         <Link 
             to={`/vans/${van.id}`}
+            style={{ textDecoration: "none", color: "inherit" }}
             aria-label={`View details for ${van.name}, 
                         priced at $${van.price} per day`}
         >
