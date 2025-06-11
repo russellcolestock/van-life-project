@@ -282,5 +282,29 @@ footer {
     background-color: #161616;
 }
 
+/* Host Routes */
+
+.host-layout-nav {
+    display: flex;
+    justify-content: start;
+    gap: 29px;
+}
+
+.host-layout-nav a {
+    color: #4D4D4D;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22.92px;
+    /* vertical-align: middle; */
+
+}
+
+.host-layout-nav a:hover {
+    font-weight: 700;
+    text-decoration: underline;
+    color: #161616;
+    cursor: pointer;
+}
+
 
 
