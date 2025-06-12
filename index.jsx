@@ -30,7 +30,6 @@ function App() {
               </Route>
             </Route> 
         </Routes> 
-          <footer>Ⓒ 2022 #VANLIFE</footer>
       </BrowserRouter>
     )
   }
