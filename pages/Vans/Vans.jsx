@@ -23,6 +23,7 @@ export default function Vans() {
             style={{ textDecoration: "none", color: "inherit" }}
             aria-label={`View details for ${van.name}, 
                         priced at $${van.price} per day`}
+            key={van.id}
         >
             <div key={van.id} className="van-tile">
                 <img src={van.imageUrl} alt={`Image of ${van.name}`} />

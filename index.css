@@ -163,7 +163,8 @@ footer {
 
 /* Vans & VanDetail pages */
 .vans-wrapper, 
-.van-detail-container {
+.van-detail-container,
+.host-van-container {
     padding: 0 27px;
     background-color: #FFF7ED;
     padding-bottom: 80px;
@@ -304,6 +305,26 @@ footer {
     text-decoration: underline;
     color: #161616;
     cursor: pointer;
+}
+
+.your-van-list-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: #ffffff;
+    margin-bottom: 15px;
+    padding: 18px 24px;
+    border-radius: 6px;
+}
+
+.your-van-list-container img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.van-list-info h2, .van-list-info p {
+    margin: 0;
+    padding: 0;
 }
 
 
