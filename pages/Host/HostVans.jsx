@@ -1,26 +1,33 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export default function HostVans() {
     const [yourVan, setYourVan] = useState([])
 
     useEffect( () => {
-        fetch("/api/vans")
+        fetch("/api/host/vans")
             .then(res => res.json())
-            .then(data => setYourVan(data.vans.filter(van => van.hostId.includes(123))))
+            .then(data => setYourVan(data.vans))
     }, [])
 
-    console.log(yourVan)
     const yourVanList = yourVan.map( van => (
-        <div key={van.id} className="your-van-list-container">
-            <div style={{width: '65px'}}>
-                <img src={van.imageUrl} />
+        <Link
+            to={`/host/vans/${van.id}`}
+            key={van.id}
+            className="host-van-link-wrapper"
+            style={{textDecoration: 'none'}}
+        >
+            <div key={van.id} className="your-van-list-container">
+                <div style={{width: '65px'}}>
+                    <img src={van.imageUrl} alt={`Photo of ${van.name}`} />
+                </div>
+                <div className="van-list-info">
+                    <h2>{van.name}</h2>
+                    <p>${van.price}/day</p>
+                </div>
             </div>
-            <div className="van-list-info">
-                <h2>{van.name}</h2>
-                <p>${van.price}/day</p>
-            </div>
-        </div>
+        </Link>
     ))
 
     return (

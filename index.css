@@ -296,8 +296,6 @@ footer {
     font-weight: 500;
     font-size: 18px;
     line-height: 22.92px;
-    /* vertical-align: middle; */
-
 }
 
 .host-layout-nav a:hover {
@@ -326,6 +324,67 @@ footer {
     margin: 0;
     padding: 0;
 }
+
+.van-list-info h2 {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 31.66px;
+    color: #161616;
+}
+
+.van-list-info p {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 31.66px;
+    color: #4D4D4D;
+}
+
+.host-van-el-wrapper {
+    background-color: #FFF7ED;
+    padding: 37px 26px 5px;
+}
+
+.host-van-el-container {
+    display: flex;
+    padding: 25px;
+    background-color: #ffffff;
+    gap: 20px;
+    align-items: center;
+}
+
+.host-van-el-container img {
+    width: 161px;
+    border-radius: 5px;
+}
+
+.host-van-el-container button {
+    background-color: #E17654;
+    color: #FFEAD0;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 13.03px;
+    line-height: 25.78px;
+    padding: 2px 12px;
+}
+
+.host-van-el-name {
+    color: #161616;
+    font-weight: 700;
+    font-size: 26.06px;
+    line-height: 27.4px;
+    margin: 0;
+    padding-top: 16px;
+}
+
+.host-van-el-price {
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 16.29px;
+    line-height: 35.95px;
+    margin: 0;
+}
+
 
 
 
