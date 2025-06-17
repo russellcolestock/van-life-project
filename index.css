@@ -339,6 +339,19 @@ footer {
     color: #4D4D4D;
 }
 
+.back-button {
+    color: #201F1D;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15.95px;
+    line-height: 22.92px;    
+}
+
+.back-button span:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 .host-van-el-wrapper {
     background-color: #FFF7ED;
     padding: 37px 26px 5px;
@@ -350,6 +363,7 @@ footer {
     background-color: #ffffff;
     gap: 20px;
     align-items: center;
+    margin-top: 37px;
 }
 
 .host-van-el-container img {

@@ -12,7 +12,7 @@ export default function HostLayout() {
         <>
             <nav className="host-layout-nav">
                 <NavLink 
-                    to="/host"
+                    to="." /*The . syntax refers to the current directory, so <Link to="./details"> from /users/123 will navigate to /users/123/details */
                     end /*The end prop tells React Router to end the matching here.
                         So if a more nested route matches, it won't also match this
                         link on this route. */ 
@@ -21,19 +21,19 @@ export default function HostLayout() {
                     Dashboard
                 </NavLink>
                 <NavLink 
-                    to="/host/income"
+                    to="income"
                     style={ ({isActive}) => isActive ? activeStyle : null }
                 >
                     Income
                 </NavLink>
                 <NavLink 
-                    to="/host/vans"
+                    to="vans"
                     style={ ({isActive}) => isActive ? activeStyle : null }
                 >
                     Vans
                 </NavLink>
                 <NavLink 
-                    to="/host/reviews"
+                    to="reviews"
                     style={ ({isActive}) => isActive ? activeStyle : null }
                 >
                     Reviews

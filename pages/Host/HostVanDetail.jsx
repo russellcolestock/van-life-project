@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link, Outlet } from "react-router-dom";
 
 export default function HostVanDetail() {
     const params = useParams()
@@ -12,8 +12,6 @@ export default function HostVanDetail() {
             .then(res => res.json())
             .then(data => setHostVan(data.vans))
     }, [params.id])
-
-    console.log("hostVan:", hostVan)
 
     const hostVanEl = hostVan.map(van => (
         <div key={van.id} className="host-van-el-container">
@@ -28,8 +26,14 @@ export default function HostVanDetail() {
     
 
     return (
-        <div className="host-van-el-wrapper">
+        <section className="host-van-el-wrapper">
+            <Link
+                to=".."
+                relative="path"
+                className="back-button"
+            >&larr; <span>Back to all vans</span></Link>
             {hostVanEl}
-        </div>
+            <Outlet />
+        </section>
     )
 }
