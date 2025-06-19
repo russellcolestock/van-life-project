@@ -9,7 +9,10 @@ export default function HostVanInfo() {
         <div className="host-van-info-container">
             <p><span>Name:</span> {hostVan.name}</p>
             <p><span>Category:</span> {hostVan.type}</p>
-            <p><span>Description:</span> {hostVan.description}</p>
+            <p className="host-van-info-description"><span>Description:</span> 
+                {hostVan.description}
+            </p>
+            <p><span>Visibility:</span> Public</p>
         </div>
     )
 }

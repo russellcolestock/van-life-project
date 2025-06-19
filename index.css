@@ -354,13 +354,18 @@ footer {
 
 .host-van-el-wrapper {
     background-color: #FFF7ED;
-    padding: 37px 26px 5px;
+    padding: 37px 26px 45px;
+}
+
+.host-van-el-inner-wrapper {
+    background-color: #ffffff;
+    border-radius: 6px;
+    padding-bottom: 10px;
 }
 
 .host-van-el-container {
     display: flex;
     padding: 25px;
-    background-color: #ffffff;
     gap: 20px;
     align-items: center;
     margin-top: 37px;
@@ -403,6 +408,8 @@ footer {
     display: inline-flex;
     padding: 27px 0;
     gap: 22px;
+    margin-left: 27px;
+    background-color: #ffffff;
 }
 
 .host-van-detail-nav a {
@@ -422,5 +429,26 @@ footer {
     text-decoration: underline;
     font-weight: 700;
 }
+
+.host-van-info-container {
+    margin-left: 27px;
+}
+
+.host-van-info-container span {
+    font-weight: 700;
+    font-size: 14.35px;
+    line-height: 21.46px;
+}
+
+.host-van-info-container p {
+    font-weight: 500;
+    font-size: 14.35px;
+    line-height: 21.46px;
+}
+
+.host-van-info-description {
+    padding-right: 27px;
+}
+
 
 

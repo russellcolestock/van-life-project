@@ -31,41 +31,44 @@ export default function HostVanDetail() {
                 className="back-button"
             >&larr; <span>Back to all vans</span></Link>
 
-            <div className="host-van-el-container">
-                <img src={hostVan.imageUrl} />
-                <div>
-                    <button>{hostVan.type}</button>
-                    <p className="host-van-el-name">{hostVan.name}</p>
-                    <p className="host-van-el-price">${hostVan.price}/day</p>
+            <div className="host-van-el-inner-wrapper">
+                <div className="host-van-el-container">
+                    <img src={hostVan.imageUrl} />
+                    <div>
+                        <button>{hostVan.type}</button>
+                        <p className="host-van-el-name">{hostVan.name}</p>
+                        <p className="host-van-el-price">${hostVan.price}/day</p>
+                    </div>
                 </div>
+
+                <nav className="host-van-detail-nav">
+                        <NavLink
+                            to="."
+                            relative
+                            end
+                            style={({ isActive }) => (isActive ? activeStyles : null)}
+                        >
+                            Details
+                        </NavLink>
+
+                        <NavLink
+                            to="pricing"
+                            style={({ isActive }) => (isActive ? activeStyles : null)}
+                        >
+                            Pricing
+                        </NavLink>
+
+                        <NavLink
+                            to="photos"
+                            style={({ isActive }) => (isActive ? activeStyles : null)}
+                        >
+                            Photos
+                        </NavLink>
+                    </nav>
+
+                <Outlet context={[hostVan, setHostVan]} />
             </div>
-
-            <nav className="host-van-detail-nav">
-                    <NavLink
-                        to="."
-                        relative
-                        end
-                        style={({ isActive }) => (isActive ? activeStyles : null)}
-                    >
-                        Details
-                    </NavLink>
-
-                    <NavLink
-                        to="pricing"
-                        style={({ isActive }) => (isActive ? activeStyles : null)}
-                    >
-                        Pricing
-                    </NavLink>
-
-                    <NavLink
-                        to="photos"
-                        style={({ isActive }) => (isActive ? activeStyles : null)}
-                    >
-                        Photos
-                    </NavLink>
-                </nav>
-
-            <Outlet context={[hostVan, setHostVan]} />
         </section>
+        
     )
 }
