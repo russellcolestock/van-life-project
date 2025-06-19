@@ -5,7 +5,13 @@ import { useParams, Link, NavLink, Outlet } from "react-router-dom";
 export default function HostVanDetail() {
     const params = useParams()
     
-    const [hostVan, setHostVan] = useState([])
+    const [hostVan, setHostVan] = useState(null)
+
+    const activeStyles ={
+        color: "#161616",
+        textDecoration: "underline",
+        fontWeight: "700"
+    }
 
     useEffect( () => {
         fetch(`/api/host/vans/${params.id}`)
@@ -15,12 +21,6 @@ export default function HostVanDetail() {
 
     if (!hostVan) {
         return <h1>Loading...</h1>
-    }
-
-    const activeStyles ={
-        color: "#161616",
-        textDecoration: "underline",
-        fontWeight: "700"
     }
 
     return (
@@ -65,7 +65,7 @@ export default function HostVanDetail() {
                     </NavLink>
                 </nav>
 
-            <Outlet />
+            <Outlet context={[hostVan, setHostVan]} />
         </section>
     )
 }
