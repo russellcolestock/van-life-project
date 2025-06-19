@@ -450,5 +450,33 @@ footer {
     padding-right: 27px;
 }
 
+.host-van-pricing-container {
+    margin: 27px;
+}
+
+.host-van-pricing-container p {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 21.46px;
+    color: #161616
+}
+
+.host-van-pricing-container span {
+    color: #4D4D4D;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21.46px;
+}
+
+.host-van-photos-container {
+    width: 103px;
+    margin-left: 27px;
+}
+
+.host-van-photos-container img {
+    width: 100%;
+    border-radius: 5px;
+}
+
 
 
