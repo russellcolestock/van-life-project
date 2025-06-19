@@ -6,6 +6,7 @@ export default function VanDetail() {
     const [van, setVan] = useState([])
 
     const params = useParams() //this gets the id for each van
+    console.log(van)
 
     useEffect( () => {
         fetch(`/api/vans/${params.id}`)

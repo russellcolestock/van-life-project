@@ -85,5 +85,9 @@ createServer({
             const id = request.params.id
             return schema.vans.findBy({ id, hostId: "123" })
         })
+
+        this.passthrough('/images/**')
+        this.passthrough()
+
     }
 })
