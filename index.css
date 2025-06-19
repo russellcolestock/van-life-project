@@ -399,6 +399,28 @@ footer {
     margin: 0;
 }
 
+.host-van-detail-nav {
+    display: inline-flex;
+    padding: 27px 0;
+    gap: 22px;
+}
 
+.host-van-detail-nav a {
+    text-decoration: none;
+    color: #4D4D4D;
+    font-weight: 500;
+}
+
+.host-van-detail-nav a:first-of-type {
+    text-decoration: none;
+    color: #4D4D4D;
+    font-weight: 500;
+}
+
+.host-van-detail-nav a:hover {
+    color: #161616;
+    text-decoration: underline;
+    font-weight: 700;
+}
 
 
