@@ -1,8 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { useState, useEffect } from 'react';
 
 export default function Vans() {
+    const [searchParams, setSearchParams] = useSearchParams()
     const [vanData, setVanData] = useState([])
 
     useEffect( () => {
@@ -13,11 +14,17 @@ export default function Vans() {
             })
     }, [] )
 
+    const typeFilter = searchParams.get("type")
+    
+    const displayedVans = typeFilter
+    ? vanData.filter( van => van.type === typeFilter)
+    : vanData
+    
     function capitalize(word) {
         return word.charAt(0).toUpperCase() + word.slice(1)
     }
 
-    const vanElements = vanData.map(van => (
+    const vanElements = displayedVans.map(van => (
         <Link 
             to={`/vans/${van.id}`}
             style={{ textDecoration: "none", color: "inherit" }}

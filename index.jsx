@@ -21,7 +21,7 @@ import "./server"
 
 function App() {
     return (
-      <BrowserRouter basename="/van-life">
+      <BrowserRouter>
           <Routes>
             <Route path='/' element={<Layout />}>
               <Route index element={<Home />} />

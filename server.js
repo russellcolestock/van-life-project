@@ -88,6 +88,5 @@ createServer({
 
         this.passthrough('/images/**')
         this.passthrough()
-
     }
 })
