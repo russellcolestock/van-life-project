@@ -46,11 +46,11 @@ export default function Vans() {
     return (
         <div className="vans-wrapper">
             <h1>Explore our van options</h1>
-            <div className="filter-btns-container">
-                <button>Simple</button>
-                <button>Luxury</button>
-                <button>Rugged</button>
-                <button>Clear filters</button>
+            <div className="van-list-filter-buttons">
+                <Link to="?type=simple" className="van-type">Simple</Link>
+                <Link to="?type=luxury" className="van-type">Luxury</Link>
+                <Link to="?type=rugged" className="van-type">Rugged</Link>
+                <Link to="." className="van-type">Clear filters</Link>
             </div>
             <div className="van-list">
                 {vanElements}
