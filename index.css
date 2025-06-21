@@ -174,6 +174,50 @@ footer {
     margin: 0;
 }
 
+.van-list-filter-buttons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-top: 22px;
+}
+
+.van-type {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 23.92px;
+    color: #4D4D4D;
+    text-decoration: none;
+}
+
+.simple-filter, 
+.luxury-filter, 
+.rugged-filter {
+    background-color: #FFEAD0;
+    padding: 7px 26px;
+    border-radius: 5px;
+}
+
+.simple-filter:hover {
+    background-color: #E17654;
+    color: #FFEAD0;
+}
+
+.luxury-filter:hover {
+    background-color: #161616;
+    color: #FFEAD0;
+}
+
+.rugged-filter:hover {
+    background-color: #115E59;
+    color: #FFEAD0;
+}
+
+
+.clear-filters {
+    text-decoration: underline;
+    padding-left: 20px;
+}
+
 .van-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
