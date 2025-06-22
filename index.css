@@ -201,16 +201,19 @@ footer {
 .simple-filter:hover {
     background-color: #E17654;
     color: #FFEAD0;
+    cursor: pointer;
 }
 
 .luxury-filter:hover {
     background-color: #161616;
     color: #FFEAD0;
+    cursor: pointer;
 }
 
 .rugged-filter:hover {
     background-color: #115E59;
     color: #FFEAD0;
+    cursor: pointer;
 }
 
 
@@ -220,6 +223,22 @@ footer {
     border: none;
     background-color: #FFF7ED;
 }
+
+.simple-filter.selected {
+    background-color: #E17654;
+    color: #FFEAD0;
+}
+
+.luxury-filter.selected {
+    background-color: #161616;
+    color: #FFEAD0;
+}
+
+.rugged-filter.selected {
+    background-color: #115E59;
+    color: #FFEAD0;
+}
+
 
 .van-list {
     display: grid;

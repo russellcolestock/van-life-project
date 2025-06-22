@@ -15,6 +15,7 @@ export default function Vans() {
     }, [] )
 
     const typeFilter = searchParams.get("type")
+    console.log(typeFilter)
     
     const displayedVans = typeFilter
     ? vanData.filter( van => van.type === typeFilter)
@@ -43,26 +44,36 @@ export default function Vans() {
         </Link>
     ))
 
+    function handleFilterChange(key, value) {
+        setSearchParams(prevParams => {
+            if (value === null) {
+                prevParams.delete(key)
+            } else {
+                prevParams.set(key, value)
+            }
+        })
+    }
+
     return (
         <div className="vans-wrapper">
             <h1>Explore our van options</h1>
             <div className="van-list-filter-buttons">
                 <button 
-                    onClick={ () => setSearchParams({type: "simple"})} 
-                    className="van-type simple-filter"
+                    onClick={ () => handleFilterChange("type", "simple")} 
+                    className={`van-type simple-filter ${typeFilter === "simple" ? "selected" : ""}`}
                 >Simple</button>
                 <button 
-                    onClick={ () => setSearchParams({type: "luxury"})} 
-                    className="van-type luxury-filter"
+                    onClick={ () => handleFilterChange("type", "luxury")} 
+                    className={`van-type luxury-filter ${typeFilter === "luxury" ? "selected" : ""}`}
                 >Luxury</button>
                 <button 
-                    onClick={ () => setSearchParams({type: "rugged"})} 
-                    className="van-type rugged-filter"
+                    onClick={ () => handleFilterChange("type", "rugged")} 
+                    className={`van-type rugged-filter ${typeFilter === "rugged" ? "selected" : ""}`}
                 >Rugged</button>
                 { typeFilter ? (
                     <button 
-                        onClick={ () => setSearchParams({type: ""})} 
-                        className="van-type clear-filters"
+                        onClick={ () => handleFilterChange("type", null)} 
+                        className={`van-type clear-filters`}
                     >Clear filters</button>
                 ) : null }
             </div>
