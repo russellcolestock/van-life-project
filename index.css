@@ -195,6 +195,7 @@ footer {
     background-color: #FFEAD0;
     padding: 7px 26px;
     border-radius: 5px;
+    border: none;
 }
 
 .simple-filter:hover {
@@ -216,6 +217,8 @@ footer {
 .clear-filters {
     text-decoration: underline;
     padding-left: 20px;
+    border: none;
+    background-color: #FFF7ED;
 }
 
 .van-list {
