@@ -59,10 +59,12 @@ export default function Vans() {
                     onClick={ () => setSearchParams({type: "rugged"})} 
                     className="van-type rugged-filter"
                 >Rugged</button>
-                <button 
-                    onClick={ () => setSearchParams({type: ""})} 
-                    className="van-type clear-filters"
-                >Clear filters</button>
+                { typeFilter ? (
+                    <button 
+                        onClick={ () => setSearchParams({type: ""})} 
+                        className="van-type clear-filters"
+                    >Clear filters</button>
+                ) : null }
             </div>
             <div className="van-list">
                 {vanElements}
