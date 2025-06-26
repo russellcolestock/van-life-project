@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 export default function Vans() {
     const [searchParams, setSearchParams] = useSearchParams()
     const [vanData, setVanData] = useState([])
-
+    
     useEffect( () => {
         fetch('/api/vans')
             .then(res => res.json())
@@ -15,7 +15,6 @@ export default function Vans() {
     }, [] )
 
     const typeFilter = searchParams.get("type")
-    console.log(typeFilter)
     
     const displayedVans = typeFilter
     ? vanData.filter( van => van.type === typeFilter)
@@ -27,7 +26,8 @@ export default function Vans() {
 
     const vanElements = displayedVans.map(van => (
         <Link 
-            to={`/vans/${van.id}`}
+            to={van.id}
+            state={{ search: `?${searchParams.toString()}` }}
             style={{ textDecoration: "none", color: "inherit" }}
             aria-label={`View details for ${van.name}, 
                         priced at $${van.price} per day`}
