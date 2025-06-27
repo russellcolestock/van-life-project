@@ -19,7 +19,6 @@ export default function VanDetail() {
     }
 
     const search = location.state?.search || ""
-    console.log(search)
 
     return (
         <div className="van-detail-container">
