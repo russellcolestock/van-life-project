@@ -544,5 +544,38 @@ footer {
     border-radius: 5px;
 }
 
+/* NotFound Page */
+.not-found-container {
+    padding: 100px 26px;
+    background-color: #FFF7ED;
+}
+
+.not-found-container h1 {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 42px;
+    color: #161616;
+}
+
+.not-found-container .return-btn {
+    display: block;
+    margin: 0 auto;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    background-color: #161616;
+    padding: 12px;
+    width: 100%;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 31.66px;
+    text-align: center;
+}
+
+.not-found-container .return-btn:hover {
+    cursor: pointer;
+}
+
 
 
