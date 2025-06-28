@@ -27,7 +27,10 @@ export default function Vans() {
     const vanElements = displayedVans.map(van => (
         <Link 
             to={van.id}
-            state={{ search: `?${searchParams.toString()}` }}
+            state={{ 
+                search: `?${searchParams.toString()}`,
+                type: typeFilter 
+            }}
             style={{ textDecoration: "none", color: "inherit" }}
             aria-label={`View details for ${van.name}, 
                         priced at $${van.price} per day`}
