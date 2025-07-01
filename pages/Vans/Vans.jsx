@@ -1,17 +1,21 @@
 import React from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { useState, useEffect } from 'react';
+import { getVans } from "../../api";
 
 export default function Vans() {
     const [searchParams, setSearchParams] = useSearchParams()
     const [vanData, setVanData] = useState([])
+    const [loading, setLoading] = useState(false)
     
     useEffect( () => {
-        fetch('/api/vans')
-            .then(res => res.json())
-            .then(data => {
-                setVanData(data.vans)
-            })
+        async function loadVans() {
+            setLoading(true)
+            const data = await getVans()
+            setVanData(data)
+            setLoading(false)
+        } 
+        loadVans()
     }, [] )
 
     const typeFilter = searchParams.get("type")
@@ -56,6 +60,16 @@ export default function Vans() {
             }
             return prevParams
         })
+    }
+
+    if (loading) {
+        return <h1 
+            style={{
+                padding: "50px 26px", 
+                backgroundColor: "#FFF7ED",
+                margin: "0"
+            }}
+        >Loading...</h1>
     }
 
     return (
