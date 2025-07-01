@@ -7,13 +7,22 @@ export default function Vans() {
     const [searchParams, setSearchParams] = useSearchParams()
     const [vanData, setVanData] = useState([])
     const [loading, setLoading] = useState(false)
+    const [error, setError] = useState(null)
+    console.log(error)
     
     useEffect( () => {
         async function loadVans() {
             setLoading(true)
-            const data = await getVans()
-            setVanData(data)
-            setLoading(false)
+            try {
+                const data = await getVans()
+                setVanData(data)
+            }
+            catch(err) {
+                setError(err)
+            }
+            finally {
+                setLoading(false)
+            }
         } 
         loadVans()
     }, [] )
@@ -63,13 +72,18 @@ export default function Vans() {
     }
 
     if (loading) {
-        return <h1 
+        return <h1  
+            aria-live="polite"
             style={{
                 padding: "50px 26px", 
                 backgroundColor: "#FFF7ED",
                 margin: "0"
             }}
         >Loading...</h1>
+    }
+
+    if (error) {
+        return <h1 aria-live="assertive">There was an error: {error.message}</h1>
     }
 
     return (
