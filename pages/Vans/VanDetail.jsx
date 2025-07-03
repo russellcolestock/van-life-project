@@ -14,8 +14,10 @@ export default function VanDetail() {
             .then(data => setVan(data.vans))
     }, [params.id])
     
-    function capitalize(word = "") {
-        return word.charAt(0).toUpperCase() + word.slice(1)
+    function capitalize(word) {
+        //return word.charAt(0).toUpperCase() + word.slice(1)
+        const str = String(word || "")
+        return str.charAt(0).toUpperCase() + str.slice(1)
     }
 
     const search = location.state?.search || ""

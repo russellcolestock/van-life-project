@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom"
+import imageUrl from "/images/login-icon.png" 
 
 export default function Header() {
     const activeStyle = {
@@ -31,7 +32,13 @@ export default function Header() {
                     style={ ({isActive}) => isActive ? activeStyle : null }
                 >
                   Vans
-                </NavLink>          
+                </NavLink>
+                <Link to="login" className="login-link">
+                  <img 
+                    src={imageUrl} 
+                    className="login-icon"
+                  />
+                </Link>          
               </div>
           </nav>
         </header>
