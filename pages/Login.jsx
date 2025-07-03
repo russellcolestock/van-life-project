@@ -20,7 +20,7 @@ export default function Login() {
     }
 
     const displayLoginMessage = location?.state // checks if state exists (or if state = null)
-        ? <h1>{location.state.message}</h1>
+        ? <h3 className="login-first">{location.state.message}</h3>
         : ""
 
     return (
