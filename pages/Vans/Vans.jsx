@@ -8,7 +8,6 @@ export default function Vans() {
     const [vanData, setVanData] = useState([])
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(null)
-    console.log(error)
     
     useEffect( () => {
         async function loadVans() {
