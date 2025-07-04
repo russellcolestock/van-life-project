@@ -10,8 +10,8 @@ export default function Login() {
     function handleSubmit(e) {
         e.preventDefault()
         console.log(loginFormData)
-        //loginUser(loginFormData).then(result => console.log(result))
-        console.log(loginUser)
+        loginUser(loginFormData).then(result => console.log(result))
+
     }
 
     function handleChange(e){
