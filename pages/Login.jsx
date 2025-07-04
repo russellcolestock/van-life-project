@@ -57,7 +57,9 @@ export default function Login() {
                     type="password"
                     placeholder="Password"
                 />
-                <button>Log in</button>
+                {status === "submitting" 
+                    ? <button disabled>Logging in...</button> 
+                    : <button>Log in</button>}
             </form>
         </div>
     )
