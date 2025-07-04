@@ -62,12 +62,12 @@ createServer({
             hostId: "123" 
         })
 
-        server.create("user", { 
-            id: "123", 
-            email: "b@b.com", 
-            password: "p123", 
-            name: "Bob" 
-        })
+        // server.create("user", { 
+        //     id: "123", 
+        //     email: "b@b.com", 
+        //     password: "p123", 
+        //     name: "Bob" 
+        // })
     },
 
     routes() {

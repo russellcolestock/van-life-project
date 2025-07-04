@@ -52,8 +52,6 @@ export default function VanDetail() {
     const search = location.state?.search || ""
     const type = capitalize(location.state?.type) || "all"
 
-    console.log(van)
-
     return (
         <div className="van-detail-container">
             <Link

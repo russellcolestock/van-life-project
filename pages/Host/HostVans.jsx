@@ -1,17 +1,33 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { getHostVans } from "../../api"
 
 export default function HostVans() {
-    const [yourVan, setYourVan] = useState([])
+    const [vans, setVans] = useState([])
+    const [loading, setLoading] = React.useState(false)
+    const [error, setError] = React.useState(null)
+
 
     useEffect( () => {
-        fetch("/api/host/vans")
-            .then(res => res.json())
-            .then(data => setYourVan(data.vans))
+        async function loadVans() {
+            setLoading(true)
+            try {
+                const data = await getHostVans()
+                setVans(data)
+            } catch (err) {
+                setError(err)
+            } finally {
+                setLoading(false)
+            }
+        }
+        loadVans()
+        // fetch("/api/host/vans")
+        //     .then(res => res.json())
+        //     .then(data => setVans(data.vans))
     }, [])
 
-    const yourVanList = yourVan.map( van => (
+    const yourVanList = vans.map( van => (
         <Link
             to={van.id}
             key={van.id}
@@ -29,6 +45,14 @@ export default function HostVans() {
             </div>
         </Link>
     ))
+
+     if (loading) {
+        return <h1>Loading...</h1>
+    }
+
+    if (error) {
+        return <h1>There was an error: {error.message}</h1>
+    }
 
     return (
         <div className="host-van-container" style={{margin: 'none'}}>
