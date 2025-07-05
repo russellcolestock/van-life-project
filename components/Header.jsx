@@ -7,7 +7,10 @@ export default function Header() {
         fontWeight: "bold",
         textDecoration: "underline",
         color: "#161616"
+    }
 
+    function fakeLogOut() {
+      localStorage.removeItem("loggedin")
     }
 
     return (
@@ -40,6 +43,7 @@ export default function Header() {
                   />
                 </Link>          
               </div>
+              <button onClick={fakeLogOut}>X</button>
           </nav>
         </header>
     )

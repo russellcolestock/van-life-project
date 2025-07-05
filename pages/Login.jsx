@@ -5,16 +5,20 @@ import { loginUser } from "../api"
 
 export default function Login() {
     const [loginFormData, setLoginFormData] = useState({email: "", password: ""})
-    const location = useLocation()
     const [status, setStatus] = useState("idle")
     const [error, setError] = useState(null)
+    
+    const location = useLocation()
+    const navigate = useNavigate()
 
     function handleSubmit(e) {
         e.preventDefault()
         setStatus("submitting")
         loginUser(loginFormData)
             .then(data => {
-                console.log(data)
+                localStorage.setItem("loggedin", true)
+                setError(null)
+                navigate("/host")
             })
             .catch(err => {
                 setError(err)
@@ -33,17 +37,24 @@ export default function Login() {
     }
 
     const displayLoginMessage = location?.state // checks if state exists (or if state = null)
-        ? <h3 className="login-first">{location.state.message}</h3>
+        ? <h3 className="login-error">{location.state.message}</h3>
         : ""
 
     return (
         <div className="login-container">
 
-            {displayLoginMessage}
-
-            {error && <h3 className="error">{error.message}</h3>}
+            {
+                location.state?.message &&
+                    <h3 className="login-error">{location.state.message}</h3>
+            }
 
             <h1>Sign in to your account</h1>
+
+            {
+                error?.message && 
+                    <h3 className="login-error">{error.message}</h3>
+            }
+
             <form onSubmit={handleSubmit} className="login-form">
                 <input 
                     name="email"
