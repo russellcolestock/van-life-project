@@ -12,6 +12,7 @@ export default function AuthRequired() {
                 state={ {message: "You must log in first"} }
                 //Remember the 1st set of brackets is for Javascript; 
                 // the 2nd set is the Javascript object
+                replace
             />)
     }
 
