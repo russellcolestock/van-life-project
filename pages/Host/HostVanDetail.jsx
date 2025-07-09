@@ -29,9 +29,7 @@ export default function HostVanDetail() {
         }
 
         loadVans()
-        // fetch(`/api/host/vans/${params.id}`)
-        //     .then(res => res.json())
-        //     .then(data => setHostVan(data.vans))
+        
     }, [])
 
     if (loading) {
