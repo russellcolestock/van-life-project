@@ -5,9 +5,11 @@ import { getHostVans } from "../../api"
 
 export default function HostVanDetail() {
     const { id } = useParams()
-    const [hostVan, setHostVan] = useState(null)
+    const [currentVan, setCurrentVan] = useState(null)
     const [loading, setLoading] = React.useState(false)
     const [error, setError] = React.useState(null)
+
+    console.log(currentVan)
 
     const activeStyles ={
         color: "#161616",
@@ -30,7 +32,7 @@ export default function HostVanDetail() {
 
         loadVans()
         
-    }, [])
+    }, [id])
 
     if (loading) {
         return <h1>Loading...</h1>
@@ -47,14 +49,14 @@ export default function HostVanDetail() {
                 relative="path"
                 className="back-button"
             >&larr; <span>Back to all vans</span></Link>
-
+        {currentVan && 
             <div className="host-van-el-inner-wrapper">
                 <div className="host-van-el-container">
-                    <img src={hostVan.imageUrl} />
+                    <img src={currentVan.imageUrl} />
                     <div>
-                        <button>{hostVan.type}</button>
-                        <p className="host-van-el-name">{hostVan.name}</p>
-                        <p className="host-van-el-price">${hostVan.price}/day</p>
+                        <button>{currentVan.type}</button>
+                        <p className="host-van-el-name">{currentVan.name}</p>
+                        <p className="host-van-el-price">${currentVan.price}/day</p>
                     </div>
                 </div>
 
@@ -83,8 +85,9 @@ export default function HostVanDetail() {
                         </NavLink>
                     </nav>
 
-                <Outlet context={[hostVan, setHostVan]} />
+                <Outlet context={[currentVan, setCurrentVan]} />
             </div>
+        }
         </section>
         
     )
