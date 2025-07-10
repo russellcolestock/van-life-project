@@ -9,8 +9,6 @@ export default function HostVanDetail() {
     const [loading, setLoading] = React.useState(false)
     const [error, setError] = React.useState(null)
 
-    console.log(currentVan)
-
     const activeStyles ={
         color: "#161616",
         textDecoration: "underline",
