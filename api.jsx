@@ -17,8 +17,6 @@ const db = getFirestore(app)
 
 const vansCollectionRef = collection(db, "vans")
 
-const snapshot = getDocs(vansCollectionRef)
-
 export async function getVans() {
     const snapshot = await getDocs(vansCollectionRef)
     const vans = snapshot.docs.map(doc => ({
