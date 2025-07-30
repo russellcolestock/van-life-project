@@ -22,9 +22,6 @@ export default function HostVans() {
             }
         }
         loadVans()
-        // fetch("/api/host/vans")
-        //     .then(res => res.json())
-        //     .then(data => setVans(data.vans))
     }, [])
 
     const yourVanList = vans.map( van => (
